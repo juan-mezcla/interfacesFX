@@ -14,21 +14,10 @@ public class Escena_Botones {
     private Label contador;
     @FXML
     private Label teclaPulsada;
-    @FXML
-    private Button btn1;
-    @FXML
-    private Button btn_Reset;
-    @FXML
-    private Button btn3;
+
     @FXML
     private Button btn_Cancel;
-    private int cont=1;
-    private KeyCode codigoTecla;
-
-    public void reset(MouseEvent mouseEvent) {
-        contador.setText("");
-        teclaPulsada.setText("");
-    }
+    private static int cont=1;
 
     public void eventoBtns(MouseEvent mouseEvent) {
         cont_botones((Button) mouseEvent.getTarget());
@@ -36,33 +25,35 @@ public class Escena_Botones {
 
     public void teclaPulsada(KeyEvent keyEvent) {
 
-         if(teclaPulsada.getText().contains("Label") || teclaPulsada.getText().contains(keyEvent.getText())){
-             contador.setText("Se ha pulsado la tecla "+cont+" veces");
-             teclaPulsada.setText(keyEvent.getText());
-             cont++;
+        if (KeyCode.ENTER==keyEvent.getCode()){
 
-        }else{
-            cont=1;
-             contador.setText("Se ha pulsado la tecla "+cont+" veces");
-             teclaPulsada.setText(keyEvent.getText());
+            teclaPulsada.setText("ENTER");
+
         }
 
-
-
-
+        if (KeyCode.ESCAPE==keyEvent.getCode()){
+            teclaPulsada.setText("ESCAPE");
+            cont_botones(btn_Cancel);
+        }
     }
 
     public void cont_botones(Button btnSeleccionado){
-        if(teclaPulsada.getText().contains(btnSeleccionado.getText())){
+
+        if (btnSeleccionado.getText().equalsIgnoreCase("Reset")){
+            contador.setText("Label");
+            teclaPulsada.setText("Label");
+            cont=1;
+        }else{
+        if(contador.getText().contains(btnSeleccionado.getText())){
             contador.setText("Se ha pulsado el boton "+btnSeleccionado.getText()+" "+cont+" veces");
-            teclaPulsada.setText(btnSeleccionado.getText());
+
             cont++;
 
         }else{
             cont=1;
-            contador.setText("Se ha pulsado el boton "+btnSeleccionado.getText()+" "+cont+" veces");
-            teclaPulsada.setText(btnSeleccionado.getText());
-
+            contador.setText("Se ha pulsado el botonn "+btnSeleccionado.getText()+" "+cont+" veces");
+            cont++;
         }
+    }
     }
 }

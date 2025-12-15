@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane onKeyPressed="#teclaPulsada" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="actividad_2.Escena_Botones">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="actividad_2.Escena_Botones">
    <children>
       <VBox layoutX="34.0" layoutY="57.0" prefHeight="286.0" prefWidth="533.0" spacing="80.0">
          <children>
@@ -27,10 +27,10 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Button fx:id="btn1" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#eventoBtns" text="Button" />
-                  <Button fx:id="btn_Reset" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#eventoBtns" text="Reset" GridPane.columnIndex="1" />
-                  <Button fx:id="btn3" defaultButton="true" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#eventoBtns" text="OK" textFill="#07eb0a" GridPane.rowIndex="1" />
-                  <Button fx:id="btn_Cancel" cancelButton="true" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#eventoBtns" text="Cancel" textFill="RED" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <Button fx:id="btn1" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onKeyPressed="#teclaPulsada" onMouseClicked="#eventoBtns" text="Button" />
+                  <Button fx:id="btn_Reset" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onKeyPressed="#teclaPulsada" onMouseClicked="#eventoBtns" text="Reset" GridPane.columnIndex="1" />
+                  <Button fx:id="btn3" defaultButton="true" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onKeyPressed="#teclaPulsada" onMouseClicked="#eventoBtns" text="OK" textFill="#07eb0a" GridPane.rowIndex="1" />
+                  <Button fx:id="btn_Cancel" cancelButton="true" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onKeyPressed="#teclaPulsada" onMouseClicked="#eventoBtns" text="Cancel" textFill="RED" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <font>
                         <Font name="Candara Light Italic" size="22.0" />
                      </font></Button>
