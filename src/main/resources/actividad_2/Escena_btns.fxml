@@ -27,10 +27,10 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Button fx:id="btn1" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Button" />
-                  <Button fx:id="btn_Reset" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#reset" text="Reset" GridPane.columnIndex="1" />
-                  <Button fx:id="btn3" defaultButton="true" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" GridPane.rowIndex="1" />
-                  <Button fx:id="btn_Cancel" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#cancel" text="Cancel" textFill="RED" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <Button fx:id="btn1" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#eventoBtns" text="Button" />
+                  <Button fx:id="btn_Reset" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#eventoBtns" text="Reset" GridPane.columnIndex="1" />
+                  <Button fx:id="btn3" defaultButton="true" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#eventoBtns" text="OK" textFill="#07eb0a" GridPane.rowIndex="1" />
+                  <Button fx:id="btn_Cancel" cancelButton="true" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#eventoBtns" text="Cancel" textFill="RED" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <font>
                         <Font name="Candara Light Italic" size="22.0" />
                      </font></Button>
