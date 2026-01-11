@@ -8,7 +8,7 @@
    <children>
       <VBox prefHeight="400.0" prefWidth="602.0">
          <children>
-            <TextField alignment="CENTER_RIGHT" editable="false" focusTraversable="false" maxWidth="1.7976931348623157E308" prefHeight="120.0" prefWidth="602.0" promptText="0" styleClass="datos">
+            <TextField fx:id="prompt" alignment="CENTER_RIGHT" editable="false" focusTraversable="false" maxWidth="1.7976931348623157E308" prefHeight="120.0" prefWidth="602.0" promptText="0" styleClass="datos">
                <font>
                   <Font name="DejaVu Sans Bold" size="50.0" />
                </font>
@@ -31,23 +31,23 @@
                   <Button fx:id="reset" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" styleClass="btnFunc" stylesheets="@style.css" text="C" />
                   <Button fx:id="delete" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" styleClass="btnFunc" text="DEL" GridPane.columnIndex="1" />
                   <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" styleClass="operador" text="7" GridPane.rowIndex="1" />
-                  <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" styleClass="operador" text="4" GridPane.rowIndex="2" />
-                  <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" styleClass="operador" text="8" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                  <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" styleClass="operador" text="5" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                  <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" styleClass="operador" text="1" GridPane.rowIndex="3" />
-                  <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" styleClass="operador" text="2" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                  <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" styleClass="operador" text="0" GridPane.rowIndex="4" />
-                  <Button fx:id="decimal" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" styleClass="operador" text="," GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                  <Button fx:id="resto" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" styleClass="btnFunc" text="\%" GridPane.columnIndex="2" />
-                  <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" styleClass="operador" text="9" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                  <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" styleClass="operador" text="6" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-                  <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" styleClass="operador" text="3" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-                  <Button fx:id="btnNegativo" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" styleClass="operador" text="+/-" GridPane.columnIndex="2" GridPane.rowIndex="4" />
-                  <Button fx:id="dividir" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" styleClass="operacion" text="/" GridPane.columnIndex="3" />
-                  <Button fx:id="multi" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" styleClass="operacion" text="x" GridPane.columnIndex="3" GridPane.rowIndex="1" />
-                  <Button fx:id="resta" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" styleClass="operacion" text="-" GridPane.columnIndex="3" GridPane.rowIndex="2" />
-                  <Button fx:id="suma" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" styleClass="operacion" text="+" GridPane.columnIndex="3" GridPane.rowIndex="3" />
-                  <Button fx:id="igual" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" styleClass="operacion" text="=" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                  <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#numSelect" styleClass="operador" text="4" GridPane.rowIndex="2" />
+                  <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#numSelect" styleClass="operador" text="8" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#numSelect" styleClass="operador" text="5" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#numSelect" styleClass="operador" text="1" GridPane.rowIndex="3" />
+                  <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#numSelect" styleClass="operador" text="2" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#numSelect" styleClass="operador" text="0" GridPane.rowIndex="4" />
+                  <Button fx:id="decimal" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#numSelect" styleClass="operador" text="," GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <Button fx:id="resto" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#operacion" styleClass="btnFunc" text="\%" GridPane.columnIndex="2" />
+                  <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#numSelect" styleClass="operador" text="9" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                  <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#numSelect" styleClass="operador" text="6" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                  <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#numSelect" styleClass="operador" text="3" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                  <Button fx:id="btnNegativo" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#numSigno" styleClass="operador" text="+/-" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                  <Button fx:id="dividir" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#operacion" styleClass="operacion" text="/" GridPane.columnIndex="3" />
+                  <Button fx:id="multi" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#operacion" styleClass="operacion" text="x" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                  <Button fx:id="resta" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#operacion" styleClass="operacion" text="-" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                  <Button fx:id="suma" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#operacion" styleClass="operacion" text="+" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                  <Button fx:id="igual" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#resultado" styleClass="operacion" text="=" GridPane.columnIndex="3" GridPane.rowIndex="4" />
                </children>
             </GridPane>
          </children>

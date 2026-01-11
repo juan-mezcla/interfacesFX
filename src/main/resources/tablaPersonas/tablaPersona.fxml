@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tablaPersonas.TablaController">
+   <children>
+      <VBox alignment="CENTER" layoutX="14.0" layoutY="14.0" prefHeight="280.0" prefWidth="166.0">
+         <children>
+            <VBox prefHeight="82.0" prefWidth="166.0">
+               <children>
+                  <Label text="Nombre" />
+                  <TextField fx:id="nombreField" />
+               </children>
+            </VBox>
+            <VBox prefHeight="73.0" prefWidth="166.0">
+               <children>
+                  <Label text="Apellidos" />
+                  <TextField fx:id="apellidoField" prefWidth="166.0" />
+               </children>
+            </VBox>
+            <VBox prefHeight="73.0" prefWidth="166.0">
+               <children>
+                  <Label text="Edad" />
+                  <TextField fx:id="edadField" />
+               </children>
+            </VBox>
+            <Button fx:id="btnAgregar" mnemonicParsing="false" onMouseClicked="#AgregarPersona" prefWidth="175.0" text="Agregar persona" />
+         </children></VBox>
+      <VBox layoutX="192.0" layoutY="14.0" prefHeight="363.0" prefWidth="389.0">
+         <children>
+            <TableView fx:id="tablaPersonas" onMouseClicked="#selectPersona" prefHeight="296.0" prefWidth="389.0">
+              <columns>
+                <TableColumn fx:id="columnNombre" prefWidth="75.0" text="Nombre" />
+                <TableColumn fx:id="columnApellido" prefWidth="75.0" text="Apellidos" />
+                  <TableColumn fx:id="columnEdad" prefWidth="75.0" text="Edad" />
+              </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TableView>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Button fx:id="btnModificar" mnemonicParsing="false" onMouseClicked="#modificar" prefWidth="150.0" text="Modificar">
+                     <HBox.margin>
+                        <Insets right="150.0" />
+                     </HBox.margin></Button>
+                  <Button fx:id="btnEliminar" mnemonicParsing="false" onMouseClicked="#eliminar" prefWidth="150.0" text="Eliminar" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
