@@ -10,6 +10,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 
 import java.awt.*;
+import java.io.*;
 import java.util.*;
 
 public class TablaController {
@@ -32,6 +33,7 @@ public class TablaController {
 
     @FXML
     public void initialize() {
+        cargarDatos();
         // Vinculamos columnas con atributos de la clase Persona
         columnNombre.setCellValueFactory(new PropertyValueFactory<>("nombre"));
         columnApellido.setCellValueFactory(new PropertyValueFactory<>("apellidos"));
@@ -39,6 +41,24 @@ public class TablaController {
 
         // Conectamos la lista a la tabla una sola vez
         tablaPersonas.setItems(personas);
+    }
+
+    public void cargarDatos(){
+        File personasGuardadas=new File("personas.txt");
+        try(FileReader leer=new FileReader(personasGuardadas)) {
+        try(BufferedReader leerLinea=new BufferedReader(leer)) {
+            if (!personasGuardadas.exists()){
+                personasGuardadas.createNewFile();
+            }
+
+            String linea;
+            while ((linea=leerLinea.readLine())!=null){
+                String campos[]=linea.split(",");
+                personas.add(new Persona(campos[0],campos[1],campos[2]));
+            }
+        } }catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public void eliminar(MouseEvent mouseEvent) {
@@ -57,8 +77,19 @@ public class TablaController {
                 apellidoField.getText().trim(),
                 edadField.getText().trim()
         );
+
+
         personas.add(nuevaPersona); // La tabla se actualiza sola al ser ObservableList
 
+        File personasGuardadas=new File("personas.txt");
+        try(FileWriter escribir=new FileWriter(personasGuardadas,true)) {
+            try(BufferedWriter escribirPersona=new BufferedWriter(escribir)) {
+
+                escribirPersona.write(nuevaPersona.toString()+"\n");
+
+            } }catch (IOException e) {
+            throw new RuntimeException(e);
+        }
         // Limpiar campos después de agregar
         nombreField.clear();
         apellidoField.clear();
@@ -92,6 +123,22 @@ public class TablaController {
 
 
         tablaPersonas.refresh();
+
+        File personasGuardadas=new File("personas.txt");
+        try(FileWriter escribir=new FileWriter(personasGuardadas)) {
+            try(BufferedWriter escribirPersona=new BufferedWriter(escribir)) {
+                personas.forEach(persona-> {
+                    try {
+                        escribirPersona.write(persona.toString());
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
+                });
+
+
+            } }catch (IOException e) {
+            throw new RuntimeException(e);
+        }
 
     }
 
