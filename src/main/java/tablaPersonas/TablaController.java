@@ -68,6 +68,21 @@ public class TablaController {
         personaSeleccionada=null;
 
         tablaPersonas.refresh();
+        File personasGuardadas=new File("personas.txt");
+        try(FileWriter escribir=new FileWriter(personasGuardadas)) {
+            try(BufferedWriter escribirPersona=new BufferedWriter(escribir)) {
+                personas.forEach(persona-> {
+                    try {
+                        escribirPersona.write(persona.toString()+"\n");
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
+                });
+
+
+            } }catch (IOException e) {
+            throw new RuntimeException(e);
+        }
 
     }
 
@@ -129,7 +144,7 @@ public class TablaController {
             try(BufferedWriter escribirPersona=new BufferedWriter(escribir)) {
                 personas.forEach(persona-> {
                     try {
-                        escribirPersona.write(persona.toString());
+                        escribirPersona.write(persona.toString()+"\n");
                     } catch (IOException e) {
                         throw new RuntimeException(e);
                     }
