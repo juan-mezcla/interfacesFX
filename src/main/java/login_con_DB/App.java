@@ -4,6 +4,8 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import login_con_DB.controlador.HomeController;
+
 import java.io.IOException;
 
 public class App extends Application {
@@ -14,7 +16,7 @@ public class App extends Application {
 
     @Override
     public void start(Stage primaryStage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HomeController.class.getResource("home.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HomeController.class.getResource("/login_con_DB/home.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 620, 540);
         primaryStage.setTitle("Tabla personitas login!");
         primaryStage.setScene(scene);

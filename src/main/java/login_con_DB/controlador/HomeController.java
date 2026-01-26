@@ -1,10 +1,15 @@
-package login_con_DB;
+package login_con_DB.controlador;
 
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.layout.StackPane;
 
-public class loginController {
+public class HomeController {
+
+    @FXML
+    private StackPane stackPanePrincipal;
+
     private StackPane ventanaVariable;
     public void cambiarVista(String fxmlPath) {
         try {
