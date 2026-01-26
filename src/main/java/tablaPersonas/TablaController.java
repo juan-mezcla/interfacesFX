@@ -3,17 +3,25 @@ package tablaPersonas;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 
-import java.awt.*;
 import java.io.*;
-import java.util.*;
 
 public class TablaController {
+    @FXML
+    private Button btnEliminar;
+
+    @FXML
+    private Button btnModificar;
+
+    @FXML
+    private Button btnAgregar;
+
     @FXML
     public TextField nombreField;
     @FXML
