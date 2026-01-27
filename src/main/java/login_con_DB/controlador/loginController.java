@@ -4,7 +4,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.layout.StackPane;
 
-public class loginController {
+public class LoginController {
     private StackPane ventanaVariable;
     public void cambiarVista(String fxmlPath) {
         try {

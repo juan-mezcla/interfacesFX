@@ -17,7 +17,7 @@ public class App extends Application {
     @Override
     public void start(Stage primaryStage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HomeController.class.getResource("/login_con_DB/home.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 620, 540);
+        Scene scene = new Scene(fxmlLoader.load());
         primaryStage.setTitle("Tabla personitas login!");
         primaryStage.setScene(scene);
         primaryStage.show();
