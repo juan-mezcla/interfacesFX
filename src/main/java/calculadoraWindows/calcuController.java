@@ -9,18 +9,28 @@ import net.objecthunter.exp4j.ExpressionBuilder;
 
 public class calcuController {
     @FXML
-    private Button reset,delete,dividir,multi,resta,suma,igual,resto,decimal,btnNegativo,
-                   _1,_2,_3,_4,_5,_6,_7,_8,_9,_0;
-    @FXML
     private TextField prompt;
 
-    public void numSelect(MouseEvent mouseEvent) {
-    }
-
-    public void operacion(MouseEvent mouseEvent) {
+    @FXML
+    public void btnSelect(MouseEvent ev) {
+       Button btn = (Button) ev.getSource(); 
+    
+    String btnSeleccionado = btn.getText();
+    
+    prompt.setText(prompt.getText()+btnSeleccionado );
     }
 
     public void numSigno(MouseEvent mouseEvent) {
+
+    }
+
+    public void delete(MouseEvent mouseEvent) {
+        prompt.setText(prompt.getText(0, prompt.getText().length()-1));
+    }
+
+    public void clean(MouseEvent mouseEvent) {
+        prompt.clear();
+        
     }
 
     public void resultado(MouseEvent mouseEvent) {

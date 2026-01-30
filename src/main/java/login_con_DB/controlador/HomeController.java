@@ -1,6 +1,5 @@
 package login_con_DB.controlador;
 
-import com.almasb.fxgl.entity.action.Action;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;

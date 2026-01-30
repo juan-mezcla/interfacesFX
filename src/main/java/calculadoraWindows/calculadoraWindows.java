@@ -16,7 +16,7 @@ public class calculadoraWindows extends Application {
     @Override
     public void start(Stage primaryStage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(calcuController.class.getResource("calculadoraWindows.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 620, 540);
+        Scene scene = new Scene(fxmlLoader.load());
         primaryStage.setTitle("Real calculator");
         primaryStage.setScene(scene);
         primaryStage.show();
